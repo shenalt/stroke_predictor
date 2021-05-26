@@ -15,8 +15,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 
 # Import helper functions to evaluate our model 
-from sklearn.metrics import accuracy_score, precision_score, recall_score, 
-                            confusion_matrix, f1_score, roc_auc_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score, confusion_matrix, f1_score, roc_auc_score
 
 # Import z-score helper function
 import scipy.stats as stats
@@ -116,7 +115,26 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
  # RANDOM FOREST CLASSIFIER
  # Init our Random Forest Classifier Model 
-model = RandomForestClassifier()
+#model = RandomForestClassifier()
+
+params = {
+    'n_estimators' : [10, 50, 100],
+    'criterion' : ['gini', 'entropy'],
+    'max_depth': [5, 10, 100, None], 
+    'min_samples_split': [2, 10, 100],
+    'max_features': ['auto', 'sqrt', 'log2']
+}
+
+grid_search_cv = GridSearchCV( 
+    estimator=RandomForestClassifier(), 
+    param_grid=params,
+    scoring='accuracy' )
+
+# fit all combination of trees. 
+grid_search_cv.fit(X_train, y_train)
+
+#  the highest accuracy-score. 
+model = grid_search_cv.best_estimator_
 
 # Fit our model 
 model.fit(X_train, y_train)
