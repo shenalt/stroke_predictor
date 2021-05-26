@@ -55,7 +55,7 @@ def main():
         else:
             prediction = "You are NOT at risk for a stroke"
 
-        # Return our inputs, list if inputs, and prediction message back to index.html
+        ## Return our inputs, list if inputs, and prediction message back to index.html
         return(flask.render_template('index.html', 
             returned_age=age,
             returned_bmi=bmi,
