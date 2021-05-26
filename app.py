@@ -49,9 +49,9 @@ def main():
 
         # Change the output of pred to a string that will be printed out
         if(pred[0] == 1):
-            # probability = predicted_proba[1] * 100
-            # prediction = "There is a {}% chance of you getting a stroke".format(probability)
-            prediction = "You are at risk for a stroke"
+            probability = predicted_proba[1] * 100
+            probability = round(probability, 2)
+            prediction = "With a probability of {}% that you are AT RISK or a stroke".format(probability)
         else:
             prediction = "You are NOT at risk for a stroke"
 
