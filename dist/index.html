@@ -67,6 +67,7 @@
                     <div class="row">
                         <div class="col-lg-8 mx-auto">
                             <h2 class="text-black mb-4">What is your BMI?</h2>
+                            <h6 class="text-black mb-4"> <b>Underweight</b> < 18.5 | <b>Healthy</b> 18.5 - 24 | <b>Overweight</b> 25-29 | <b>Obese</b> > 29</h6>
                             <fieldset>
                                 <input name="bmi_in" type="number" required>
                             </fieldset>
@@ -81,6 +82,7 @@
                     <div class="row">
                         <div class="col-lg-8 mx-auto">
                             <h2 class="text-black mb-4">What is your Average Glucose Level?</h2>
+                            <h6 class="text-black mb-4"> <b>Healthy</b>: 70mg/dL-139mg/dL | <b>Prediabetic</b>: 140mg/dL-199mg/dL | <b>Diabetic</b>: > 200mg/dL</h6>
                                 <fieldset>
                                     <input name="glucose_in" type="number" required>
                                 </fieldset>
@@ -118,8 +120,7 @@
                 </div>
         </section>
         <!--Heart Disease-->
-        <section class="feature text-center" id="heart_disease">
-            
+        <section class="feature text-center" id="heart_disease">            
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 mx-auto">
@@ -142,6 +143,7 @@
                                     </label>
                                 </fieldset>
                                 <button class="btn btn-primary js-scroll-trigger" type="submit" href="#result">Submit</button>
+                                </a>
                         </div>
                     </div>
                 </div>
@@ -152,10 +154,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-10 col-lg-8 mx-auto text-center">
-                        <h2 class="text-black mb-5">Our model predicts...</h2>
-                            {% if returned_pred %}
-                                {{ returned_pred }}
-                            {% endif %}
+                        <h3 class="text-black mb-5">Our model predicts...</h2>
+                            <h1 class="text-black-50 mb-5">
+                                {% if returned_pred %}
+                                    {{ returned_pred }}
+                                {% endif %}
+                            </h1>
                     </div>
                 </div>
             </div>
@@ -193,15 +197,18 @@
                                 <h4 class="text-uppercase m-0">Github</h4>
                                 <hr class="my-4" />
                                 <div class="small text-black-50">https://github.com/shenalt</div>
+                                <div class="small text-black-50">https://github.com/MuhamedYasserr</div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!--
                 <div class="social d-flex justify-content-center">
                     <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                     <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                     <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
                 </div>
+                -->
             </div>
         </section>
         <!-- Footer-->
