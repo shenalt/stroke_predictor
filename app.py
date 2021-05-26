@@ -28,6 +28,7 @@ def main():
         hypertension = flask.request.form['hypertension_in']
         heart_disease = flask.request.form['heart_in']
 
+        # Convert the hypertension and heart disease inputs from a string into a 0 or 1
         if(hypertension == 'Yes'):
             hypertension = 1
         else:
@@ -42,12 +43,17 @@ def main():
         list_of_inputs = [[age, bmi, glucose, hypertension, heart_disease]]
         # Using the list, feed it into the model so it can make a prediction
         pred = model.predict(list_of_inputs)
+        # Grab the predicted probability for the prediction
+        predicted_proba = model.predict_proba(list_of_inputs)
+        predicted_proba = predicted_proba[0]
 
         # Change the output of pred to a string that will be printed out
         if(pred[0] == 1):
+            # probability = predicted_proba[1] * 100
+            # prediction = "There is a {}% chance of you getting a stroke".format(probability)
             prediction = "You are at risk for a stroke"
         else:
-            prediction = "You are not at risk for a stroke"
+            prediction = "You are NOT at risk for a stroke"
 
         # Return our inputs, list if inputs, and prediction message back to index.html
         return(flask.render_template('index.html', 
@@ -58,6 +64,7 @@ def main():
             returned_heart=heart_disease,
             returned_list=list_of_inputs,
             returned_pred=prediction
+            #returned_prob=predicted_proba
             ))
 
     # return(flask.render_template('index.html'))
