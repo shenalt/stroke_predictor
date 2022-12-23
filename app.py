@@ -1,7 +1,6 @@
 import flask
 import os
 import pickle
-import pandas as pd
 # from skimage import io
 # from skimage import transform
 
