@@ -2,8 +2,8 @@ import flask
 import os
 import pickle
 import pandas as pd
-from skimage import io
-from skimage import transform
+# from skimage import io
+# from skimage import transform
 
 app = flask.Flask(__name__, template_folder='dist')
 
