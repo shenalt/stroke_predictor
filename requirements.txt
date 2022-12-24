@@ -5,3 +5,4 @@ sklearn
 scikit-image
 matplotlib
 numpy
+Werkzeug
