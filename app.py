@@ -51,7 +51,7 @@ def main():
         if(pred[0] == 1):
             probability = predicted_proba[1] * 100
             probability = round(probability, 2)
-            prediction = "With a probability of {}% that you are AT RISK or a stroke".format(probability)
+            prediction = "With a probability of {}% that you ARE AT RISK or a stroke".format(probability)
         else:
             prediction = "You are NOT at risk for a stroke"
 
