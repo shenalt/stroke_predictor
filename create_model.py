@@ -2,25 +2,11 @@
 
 # Import pandas and numpy 
 import pandas as pd
-import numpy as np
 
 import pickle
 
-import matplotlib.pyplot as plt
-
 # Helper function to split our data 
 from sklearn.model_selection import train_test_split 
-
-# Import our Logistic Regression model 
-from sklearn.linear_model import LogisticRegression
-
-# Import helper functions to evaluate our model 
-from sklearn.metrics import accuracy_score, precision_score, recall_score, confusion_matrix, f1_score, roc_auc_score
-
-# Import z-score helper function
-import scipy.stats as stats
-
-from IPython.display import Image
 
 # Import helper functipn for hyper-parameter tuning 
 from sklearn.model_selection import GridSearchCV
@@ -30,9 +16,6 @@ from sklearn.model_selection import GridSearchCV
 
 # Import Random Forest 
 from sklearn.ensemble import RandomForestClassifier
-
-# Import metrics to score our model 
-from sklearn import metrics
 
 # LOAD IN AND CLEAN UP THE DATA BEFORE MERGING
 # Load in the first stroke dataset

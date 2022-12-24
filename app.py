@@ -1,7 +1,6 @@
 import flask
 import os
 import pickle
-import pandas as pd
 # from skimage import io
 # from skimage import transform
 
@@ -47,6 +46,7 @@ def main():
         predicted_proba = model.predict_proba(list_of_inputs)
         predicted_proba = predicted_proba[0]
 
+        # CCC
         # Change the output of pred to a string that will be printed out
         if(pred[0] == 1):
             probability = predicted_proba[1] * 100
